@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "collins-fabric",
+  "version": "0.1.0",
+  "name": "collins-fabric",
+  "description": "gfdfgdgfddfggdfg",
+  "authors": ["sawiq_"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["org.sawiq.collins.fabric.CollinsFabricMod"],
+    "client": ["org.sawiq.collins.fabric.client.CollinsFabricClient"]
+  },
+  "mixins": [
+    "collins-fabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "fabric-api": "*",
+    "minecraft": "1.21.6"
+  }
+}
