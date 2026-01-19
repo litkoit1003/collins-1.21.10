@@ -143,7 +143,7 @@ public final class VideoScreenManager {
         PlayerEntity p = client.player;
         if (p == null) return;
 
-        Vec3d pos = p.getPos();
+        Vec3d pos = p.getEntityPos();
 
         // ВАЖНО: используем server-sent настройки (а не тестовые константы)
         int radius = CollinsNet.HEAR_RADIUS;

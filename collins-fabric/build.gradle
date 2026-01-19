@@ -30,8 +30,8 @@ dependencies {
     modImplementation(include("org.bytedeco:javacpp:1.5.12:windows-x86_64"))
     modImplementation(include("org.bytedeco:ffmpeg:7.1.1-1.5.12:windows-x86_64-gpl"))
 
-    modImplementation(include("maven.modrinth:cloth-config:15.0.140+fabric"))
-    modImplementation("maven.modrinth:modmenu:11.0.3")
+    modImplementation(include("maven.modrinth:cloth-config:20.0.149+fabric"))
+    modImplementation("maven.modrinth:modmenu:16.0.0")
 }
 
 java {

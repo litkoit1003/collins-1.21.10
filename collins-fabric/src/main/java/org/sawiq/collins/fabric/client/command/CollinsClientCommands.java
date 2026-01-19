@@ -38,7 +38,7 @@ public final class CollinsClientCommands {
         if (screenName != null && !screenName.isBlank()) {
             screen = VideoScreenManager.getByName(screenName);
         } else {
-            screen = VideoScreenManager.findNearestPlaying(client.player.getPos());
+            screen = VideoScreenManager.findNearestPlaying(client.player.getEntityPos());
         }
 
         if (screen == null) {

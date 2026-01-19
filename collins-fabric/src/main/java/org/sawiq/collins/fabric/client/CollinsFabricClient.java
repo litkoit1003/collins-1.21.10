@@ -14,7 +14,6 @@ public final class CollinsFabricClient implements ClientModInitializer {
     public void onInitializeClient() {
         CollinsClientConfig.get();
         CollinsNet.initClientReceiver();
-        VideoScreenRenderer.init();
         CollinsClientCommands.init();
 
         ClientTickEvents.END_CLIENT_TICK.register(VideoScreenManager::tick);

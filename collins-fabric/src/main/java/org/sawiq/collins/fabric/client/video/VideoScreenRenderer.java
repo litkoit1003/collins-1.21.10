@@ -1,7 +1,5 @@
 package org.sawiq.collins.fabric.client.video;
 
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.OverlayTexture;
@@ -17,22 +15,18 @@ import org.sawiq.collins.fabric.client.state.ScreenState;
 
 public final class VideoScreenRenderer {
 
-    private static final double EPS = 0.01; // насколько “над блоком” рисуем
+    private static final double EPS = 0.01; // насколько "над блоком" рисуем
 
     private VideoScreenRenderer() {}
-
-    public static void init() {
-        WorldRenderEvents.LAST.register(VideoScreenRenderer::render);
-    }
-
-    private static void render(WorldRenderContext ctx) {
-        MatrixStack matrices = ctx.matrixStack();
+    
+    public static void render(MatrixStack matrices, float tickDelta) {
         if (matrices == null) return;
 
         MinecraftClient client = MinecraftClient.getInstance();
-        VertexConsumerProvider.Immediate consumers = client.getBufferBuilders().getEntityVertexConsumers();
+        if (client.world == null || client.gameRenderer == null) return;
 
-        Vec3d cam = ctx.camera().getPos();
+        VertexConsumerProvider.Immediate consumers = client.getBufferBuilders().getEntityVertexConsumers();
+        Vec3d cam = client.gameRenderer.getCamera().getPos();
 
         matrices.push();
         matrices.translate(-cam.x, -cam.y, -cam.z);
